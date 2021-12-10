@@ -14,8 +14,7 @@ struct record row[n];
 
 int main()
 {
-    //char name[] = "data.txt";
-    FILE *data = fopen("data.txt", "r");
+    FILE *data = fopen("ticket16.txt", "r");
 
     for (int i = 0; i < n; i++)
     {
@@ -29,7 +28,7 @@ int main()
         printf("%s\t%s\t%d\t%d\n", row[i].drag_name, row[i].indication, row[i].exp_years, row[i].mfg_years);
     }
 
-    FILE *res = fopen("results.txt", "w");
+    FILE *res = fopen("resultsTicket16.txt", "w");
     for (int i = 0; i < n; i++)
     {
         fprintf(res, "%s\t%s\t%d\t%d\n", row[i].drag_name, row[i].indication, row[i].exp_years, row[i].mfg_years);
