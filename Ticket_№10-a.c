@@ -1,47 +1,46 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define rows 10
+#define cols 5
+
+#define mark0 1
+#define mark1 10
+
 int main()
 {
-	#define rows 10
-	#define cols 5
-
 	int tab[rows][cols];
-
-	#define mark0 1
-	#define mark1 10
-
-	for(int y = 0; y < rows; y++)
-		for(int x = 0; x < cols; x++)
-			tab[y][x] = mark0 + rand() % (mark1 - mark0 + 1);
+	for(int i = 0; i < rows; i++)
+		for(int j = 0; j < cols; j++)
+			tab[i][j] = mark0 + rand() % (mark1 - mark0 + 1);
 
 	float avg[rows];	
-	for(int y = 0; y < rows; y++)
+	for(int i = 0; i < rows; i++)
 	{
 		int s = 0;
-		for(int x = 0; x < cols; x++)
+		for(int j = 0; j < cols; j++)
 		{
-			s += tab[y][x];
+			s += tab[i][j];
 		}
-		avg[y] = s / (float)cols;
+		avg[i] = s / (float)cols;
 	}
 
 	printf("num");
-	for(int x = 0; x < cols; x++)
+	for(int i = 0; i < cols; i++)
 	{
-		printf("\t%d", x + 1);
+		printf("\t%d", i + 1);
 	}
 
 	printf("\tavg\n");
 
-	for(int y = 0; y < rows; y++)
+	for(int i = 0; i < rows; i++)
 	{
-		printf("%d", y + 1);
-		for(int x = 0; x < cols; x++)
+		printf("%d", i + 1);
+		for(int j = 0; j < cols; j++)
 		{
-			printf("\t%d", tab[y][x]);
+			printf("\t%d", tab[i][j]);
 		}
-		printf("\t%.1f\n", avg[y]);
+		printf("\t%.1f\n", avg[i]);
 	}
 
 return 0;
